@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This blog, titled ‘HasturBoxerShorts’, was created for a course during my Ph.D. in Bioinformatics at the University of Idaho. My professor, Dr. Barrie Robison, said we should title our blog and directory something informative, but that he wouldn’t stop us if we wanted to title it ‘HasturBoxerShorts’, so here we are.\nThe first project posted to my blog was a short assignment to look at literate progamming. My purpose for this project was to create a template that could be used later for my actual research projects. Hopefully I will have some work done before the end of this course. Otherwise, I may resort to using my MS thesis research.\nFuture projects will be posted throughout the duration of this course."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "HasturBoxerShorts",
+    "section": "",
+    "text": "BCB 521 - A1: Literate Programming\n\n\n\n\n\n\n\n\n\n\n\n\nZoë Wilson\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 5, 2024\n\n\nZoë Lorraine Wilson\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "BCB 521 - A1: Literate Programming",
+    "section": "",
+    "text": "This script examines the relative abundance of phyla comprising the intestinal microbiota of adults living in the UK or USA. Data used in this script is published in Lahti et al., 2014 and was obtained from and examined with the following packages:\n\n\n[1] \"microbiome 1.24.0\"\n\n\n[1] \"tidyverse 2.0.0\"\n\n\n[1] \"knitr 1.46\"\n\n\n\n\n\n\n\nRelative Abundance of the intestinal microbiota for 1006 individuals in the UK and/or USA varies by age, sex, nationality, and BMI."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html#examination-of-intestinal-microbiota-of-western-adults.",
+    "href": "posts/post-with-code/index.html#examination-of-intestinal-microbiota-of-western-adults.",
+    "title": "BCB 521 - A1: Literate Programming",
+    "section": "",
+    "text": "This script examines the relative abundance of phyla comprising the intestinal microbiota of adults living in the UK or USA. Data used in this script is published in Lahti et al., 2014 and was obtained from and examined with the following packages:\n\n\n[1] \"microbiome 1.24.0\"\n\n\n[1] \"tidyverse 2.0.0\"\n\n\n[1] \"knitr 1.46\"\n\n\n\n\n\n\n\nRelative Abundance of the intestinal microbiota for 1006 individuals in the UK and/or USA varies by age, sex, nationality, and BMI."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in my Quarto blog. Welcome!"
+  },
+  {
+    "objectID": "posts/welcome/index.html#about-my-life",
+    "href": "posts/welcome/index.html#about-my-life",
+    "title": "Welcome To My Blog",
+    "section": "About My Life",
+    "text": "About My Life\n\nActivities\nI enjoy being active outdoors, such as hiking, snowshoeing, swimming, and rock climbing.\n\nThis is me and my friend Elsa, snowshoeing at June Lake in Vancouver, Washington. Despite my best efforts to save them (by watching it all happen in slow motion), Elsa fell over while trying to pose for this picture.\n\n\nPets\nI am also obsessed with my cats. They are the cutest cats in the world, and I’m not even being biased.\n\nHere are my two cats, Fudge (left) and Fig (right). They like to cuddle, with each other and me, tear up my furniture, and sprint around the house screaming at 3am.\n\n\nHobbies\nI also like to play games, such as board games and tabletop role-play games like DnD.\n\nHere is an AI-generated image (Gemini) depicting my first DnD character, a tiefling named Oriella. She is also my longest played character, as my group managed to drag out the The Rise of Tiamat to be a 7 year campaign. I think we all believe we will still finish it someday."
+  }
+]

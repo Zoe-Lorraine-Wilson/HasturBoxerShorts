@@ -1,0 +1,139 @@
+---
+title: "BCB 521 - A1: Literate Programming"
+author: "Zoë Wilson"
+format: html
+editor: source
+---
+
+```{r}
+#| include: false
+library(tidyverse)
+library(microbiome)
+library(knitr)
+
+data(atlas1006)
+
+```
+
+## Examination of Intestinal Microbiota of Western Adults.
+
+### Summary
+
+This script examines the relative abundance of phyla comprising the intestinal microbiota of adults living in the UK or USA.
+Data used in this script is published in Lahti et al., 2014 and was obtained from and examined with the following packages:
+
+```{r}
+#| echo: false
+paste0("microbiome ", packageVersion("microbiome"))
+
+paste0("tidyverse ", packageVersion("tidyverse"))
+
+paste0("knitr ", packageVersion("knitr"))
+
+```
+
+### Data Analysis
+
+```{r Dat}
+#| include: false
+
+# Rename data
+mdat <- atlas1006
+
+# Save sample data to examine
+sdat <- mdat@sam_data
+```
+
+#### Relative Abundance
+Relative Abundance of the intestinal microbiota for 1006 individuals in the UK and/or USA varies by age, sex, nationality, and BMI.
+```{r RA N}
+#| echo: false
+#| error: false
+#| warning: false
+mdat3 <- atlas1006 %>%
+  subset_samples(!is.na(nationality)) %>%
+  aggregate_taxa(level = "Phylum") %>%  
+  microbiome::transform(transform = "compositional")
+
+plot_composition(mdat3,
+                      average_by = "nationality",
+                      taxonomic.level = "Phylum",
+                      sample.sort = "nationality",
+                      x.label = "nationality") +
+  scale_fill_brewer("Phyla", palette = "Paired") +
+  guides(fill = guide_legend(ncol = 1)) +
+  labs(x = "Nationality", y = "Relative abundance (%)",
+       title = "Relative abundance data") + 
+  theme(axis.text.x = element_text(angle=90, hjust=1),
+        legend.text = element_text(face = "italic"))
+
+```
+
+```{r RA BMI}
+#| echo: false
+#| error: false
+#| warning: false
+mdat4 <- atlas1006 %>%
+    subset_samples(!is.na(bmi_group)) %>%
+  aggregate_taxa(level = "Phylum") %>%  
+  microbiome::transform(transform = "compositional")
+
+plot_composition(mdat4,
+                      average_by = "bmi_group",
+                      taxonomic.level = "Phylum",
+                      sample.sort = "bmi_group",
+                      x.label = "bmi_group") +
+  scale_fill_brewer("Phyla", palette = "Paired") +
+  guides(fill = guide_legend(ncol = 1)) +
+  labs(x = "BMI", y = "Relative abundance (%)",
+       title = "Relative abundance data") + 
+  theme(axis.text.x = element_text(angle=90, hjust=1),
+        legend.text = element_text(face = "italic"))
+
+```
+
+```{r RA S}
+#| echo: false
+#| error: false
+#| warning: false
+mdat5 <- atlas1006 %>%
+  subset_samples(!is.na(sex)) %>%
+  aggregate_taxa(level = "Phylum") %>%  
+  microbiome::transform(transform = "compositional")
+
+plot_composition(mdat5,
+                      average_by = "sex",
+                      taxonomic.level = "Phylum",
+                      sample.sort = "sex",
+                      x.label = "sex") +
+  scale_fill_brewer("Phyla", palette = "Paired") +
+  guides(fill = guide_legend(ncol = 1)) +
+  labs(x = "Sex", y = "Relative abundance (%)",
+       title = "Relative abundance data") + 
+  theme(axis.text.x = element_text(angle=90, hjust=1),
+        legend.text = element_text(face = "italic"))
+
+```
+
+```{r RA A}
+#| echo: false
+#| error: false
+#| warning: false
+mdat6 <- atlas1006 %>%
+  subset_samples(!is.na(age)) %>%
+  aggregate_taxa(level = "Phylum") %>%  
+  microbiome::transform(transform = "compositional")
+
+plot_composition(mdat6,
+                      average_by = "age",
+                      taxonomic.level = "Phylum",
+                      sample.sort = "age",
+                      x.label = "age") +
+  scale_fill_brewer("Phyla", palette = "Paired") +
+  guides(fill = guide_legend(ncol = 1)) +
+  labs(x = "Age", y = "Relative abundance (%)",
+       title = "Relative abundance data") + 
+  theme(axis.text.x = element_text(angle=90, hjust=1),
+        legend.text = element_text(face = "italic"))
+
+```

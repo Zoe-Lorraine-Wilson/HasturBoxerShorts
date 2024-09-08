@@ -1,0 +1,19 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/zoe-l-wilson/
+    - icon: github
+      text: Github
+      href: https://github.com/Zoe-Lorraine-Wilson
+---
+
+This blog, titled 'HasturBoxerShorts', was created for a course during my Ph.D. in Bioinformatics at the University of Idaho. My professor, Dr. Barrie Robison, said we should title our blog and directory something informative, but that he wouldn't stop us if we wanted to title it 'HasturBoxerShorts', so here we are.
+
+The first project posted to my blog was a short assignment to look at literate progamming. My purpose for this project was to create a template that could be used later for my actual research projects. Hopefully I will have some work done before the end of this course. Otherwise, I may resort to using my MS thesis research.
+
+Future projects will be posted throughout the duration of this course.

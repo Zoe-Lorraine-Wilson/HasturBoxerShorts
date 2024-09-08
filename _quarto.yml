@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "HasturBoxerShorts"
+  navbar:
+    right:
+      - about.qmd
+      - icon: linkedin
+        href: https://www.linkedin.com/in/zoe-l-wilson/
+      - icon: github
+        href: https://github.com/Zoe-Lorraine-Wilson
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+editor: visual
+

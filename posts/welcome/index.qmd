@@ -1,0 +1,34 @@
+---
+title: "Welcome To My Blog"
+author: "Zoë Lorraine Wilson"
+date: "2024-09-05"
+categories: [news]
+---
+
+This is the first post in my Quarto blog. Welcome!
+
+## About My Life
+
+### Activities
+
+I enjoy being active outdoors, such as hiking, snowshoeing, swimming, and rock climbing.
+
+![](images/IMG_8973.JPEG)
+
+This is me and my friend Elsa, snowshoeing at June Lake in Vancouver, Washington. Despite my best efforts to save them (by watching it all happen in slow motion), Elsa fell over while trying to pose for this picture.
+
+### Pets
+
+I am also obsessed with my cats. They are the cutest cats in the world, and I'm not even being biased.
+
+![](images/20240106_161224.jpg)
+
+Here are my two cats, Fudge (left) and Fig (right). They like to cuddle, with each other and me, tear up my furniture, and sprint around the house screaming at 3am.
+
+### Hobbies
+
+I also like to play games, such as board games and tabletop role-play games like DnD.
+
+![](images/Gemini_Generated_Image_czu112czu112czu1.jpg)
+
+Here is an AI-generated image (Gemini) depicting my first DnD character, a tiefling named Oriella. She is also my longest played character, as my group managed to drag out the The Rise of Tiamat to be a 7 year campaign. I think we all believe we will still finish it someday.

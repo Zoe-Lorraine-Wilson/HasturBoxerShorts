@@ -1,0 +1,16 @@
+{
+  "hash": "b1cd84d8b6de373451fd856b89ad8eef",
+  "result": {
+    "markdown": "---\ntitle: \"BCB 521 - A1: Literate Programming\"\nauthor: \"Zoë Wilson\"\nformat: html\neditor: source\n---\n\n\n\n\n## Examination of Intestinal Microbiota of Western Adults.\n\n### Summary\n\nThis script examines the relative abundance of phyla comprising the intestinal microbiota of adults living in the UK or USA.\nData used in this script is published in Lahti et al., 2014 and was obtained from and examined with the following packages:\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"microbiome 1.24.0\"\n```\n:::\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"tidyverse 2.0.0\"\n```\n:::\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"knitr 1.46\"\n```\n:::\n:::\n\n\n### Data Analysis\n\n\n\n\n\n#### Relative Abundance\nRelative Abundance of the intestinal microbiota for 1006 individuals in the UK and/or USA varies by age, sex, nationality, and BMI.\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/RA N-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/RA BMI-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/RA S-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n::: {.cell-output-display}\n![](index_files/figure-html/RA A-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
