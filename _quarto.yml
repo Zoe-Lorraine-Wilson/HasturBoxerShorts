@@ -4,6 +4,7 @@ project:
 
 website:
   title: "HasturBoxerShorts"
+  
   sidebar:
     title: "Blog Contents"
     border: true
@@ -17,6 +18,7 @@ website:
     left: 
       - text: "Home"
         href: index.qmd
+    
     right:
       - icon: linkedin
         href: https://www.linkedin.com/in/zoe-l-wilson/
