@@ -13,7 +13,7 @@ website:
         href: https://github.com/Zoe-Lorraine-Wilson
 format:
   html:
-    theme: cosmo
+    theme: minty
     css: styles.css
 
 editor: visual

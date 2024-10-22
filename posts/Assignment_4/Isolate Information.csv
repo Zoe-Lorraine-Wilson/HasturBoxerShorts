@@ -1,0 +1,7 @@
+Isolate,Clonal_Complex,Sequence_Type,Type,Number_Intact_Prophage,Assumed_Virulency
+Strain 1,CC-13,ST-1,Typical,1,Avirulent
+Strain 2,CC-3,ST-3,Typical,1,Somewhat Virulent
+Strain 3,CC-3,ST-3,Typical,1,Somewhat Virulent
+Strain 4,CC-12,ST-12,Atypical,5,Virulent
+Strain 5,CC-12,ST-19,Atypical,3,Virulent
+Strain 6,CC-3,ST-39,Typical,3,Somewhat Virulent

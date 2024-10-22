@@ -1,0 +1,226 @@
+---
+title: "BCB521-Assignment_4"
+author: "Zoë Wilson"
+format: html
+editor: source
+---
+
+## Project Summary
+
+This project aims to examine how bacteriophage could be used to combat diseases in honeybees. One deadly pathogen that threatens the honeybee is European Foulbrood (EFB), which is caused by the bacteria *Melissococcus plutonius*. *M. plutonius* can devastate hives by killing off larvae, and has no "cure". Our lab has sequenced 6 different isolates of *M. plutonius* obtained from an apiary in Minnesota. These isolates were analyzed to identify regions of the genome that may be a prophage, a bacteriophage integrated into the host genome. Some prophage may actually be temperate phage, which can be induced to enter the lytic cycle, thereby infecting and killing bacteria. If we can identify prophage, we can then attempt to induce temperate phage. The identification and obtainment of bacteriophage that can infect *M. plutonius* will allow us to pursue an avenue to support honeybee health without the use of antibiotics. Currently, no bacteriophage have been isolate and identified for *M. plutonius*. After our attempts to induce temperate phage, we will also examine environmental samples taken from the apiary for the presence of any bacteriophage which may infect *M. plutonius*.
+  
+  
+### Project Goals
+
+1.  Identify prophage in *M. plutonius* genome
+2.  Induce temperate phage from *M. plutonius* genome
+3.  Find bacteriophage in environmental samples
+  
+  
+## Script Summary
+
+This script is designed to examine the number of prophage identified in various *M. plutonius* isolates genomes and plot the data for visualization.
+  
+  
+### Packages
+  
+This code chunk will install and load packages necessary for this script.  
+  
+  
+```{r setup}
+#This if statement will install the tidyverse package
+#If it is not already available when trying to load
+if (!require("tidyverse")){
+  #Install tidyverse package if not found in next command
+  install.packages("tidyverse")
+  #Load tidyverse package
+  library(tidyverse)
+  }
+
+#Confirm version of tidyverse that is loaded
+#This script was originally completed with tidyverse version 2.0.0
+packageVersion("tidyverse")
+
+#This if statement will install the ggpubr package
+#If it is not already available when trying to load
+if (!require("ggpubr")){
+  #Install ggpubr package if not found in next command
+  install.packages("ggpubr")
+  #Load ggpubr package
+  library(ggpubr)
+  }
+
+#Confirm version of tidyverse that is loaded
+#This script was originally completed with tidyverse version 0.6.0
+packageVersion("ggpubr")
+
+```
+  
+  
+### Data
+  
+This code chunk will load in a data frame containing information on the isolates
+
+  
+```{r data}
+df <- read.csv("Isolate Information.csv")
+head(df)
+str(df)
+```
+
+### Data Exploration
+  
+The following code chunks will play around with the data and create some plots to examine the prophage identified in the 6 *M. plutonius* isolates. The goal is to see if there are any interesting patterns in the data to follow up on.  
+
+  
+#### Number of Prophage by Isolate
+  
+First, let's plot the number of prophage for each isolate. We sequenced 6 isolates of *M. plutonius*. The name of each of the 6 *M. plutonius* isolates can be found in the column "Isolate", and the number of prophage can be found in the column "Number_Intact_Prophage".
+  
+```{r plot_iso}
+
+#Create a plot using the dataframe with isolate information
+#Isolates on x axis
+(plot_iso <- ggplot(df,aes(x=Isolate,
+                           #Number of prophage on y axis
+                           y=Number_Intact_Prophage))+
+   #Fill columns with a color so it's not boring
+  geom_col(fill="goldenrod")+
+   #Make nice legible axis titles
+   #italicize bacteria name
+  labs(x=expression(paste(italic("M. plutonius"), " Isolate")),
+       y="Number of Potential Prophage")+
+   #Adjust themes for legibility
+   #Increases axis title and text size
+  theme(axis.title=element_text(size=20),
+        axis.text=element_text(size=15),
+        #Remove gridlines and color from figure background
+        panel.background=element_blank(),
+        #Make axis lines black
+        axis.line = element_line(colour = "black")))
+```
+  
+  
+#### Number of Prophage by Sequence Type
+  
+*M. plutonius* strains are classified by sequence type, which groups the bacteria by a handful of alleles in specific genes. Specifically, sequence type is determined by the allelic profile of 4 genes. The Sequence Type (ST) of the 6 *M. plutonius* isolates can be found in the column "Sequnce_Type"
+  
+```{r plot_ST}
+
+#Create a plot using the dataframe with isolate information
+
+(plot_ST <- df  %>%
+   #summarize average number of prophage by sequence type
+   reframe(avg=mean(Number_Intact_Prophage),.by=Sequence_Type)%>%
+   #ST on x axis
+   ggplot(aes(x=Sequence_Type,
+              #Number of prophage on y axis
+              y=avg,
+              #Colored by the sequence type of strain
+              fill=Sequence_Type))+
+  #Create columns with the number of prophage
+  geom_col()+
+  #Adjust labels for legibility
+  labs(y="Number of Potential Prophage",
+       x="Sequence Type")+
+  #Adjust themes for legibility
+  #Increase axis and legend title and text fonts
+  theme(axis.title=element_text(size=20),
+        axis.text=element_text(size=15),
+        #do not include legend
+        legend.position="none",
+        #Remove gridlines and color from figure background
+        panel.background=element_blank(),
+        #Make axis lines black
+        axis.line = element_line(colour = "black")))
+```
+  
+  
+#### Number of Prophage by Clonal Complex
+  
+*M. plutonius* strains can be classified by clonal complex, which groups the bacteria by highly related genomes and have the same or very similar sequence type. The clonal complex (CC) of the 6 *M. plutonius* isolates can be found in the column "Clonal_Complex".
+
+```{r plot_CC}
+
+#Create a plot using the dataframe with isolate information
+
+(plot_CC <- df  %>%
+   #summarize average number of prophage by clonal complex
+   reframe(avg=mean(Number_Intact_Prophage),.by=Clonal_Complex)%>%
+   #clonal on x axis
+   ggplot(aes(x=Clonal_Complex,
+              #Number of prophage on y axis
+              y=avg,
+              #Colored by the CC of strain
+              fill=Clonal_Complex))+
+  #Create columns with the number of prophage
+  geom_col()+
+  #Adjust labels for legibility
+  labs(x="Clonal Complex",
+       y="Average Number of Potential Prophage")+
+  #Adjust themes for legibility
+  #Increase axis and legend title and text fonts
+  theme(axis.title=element_text(size=20),
+        axis.text=element_text(size=15),
+        #Do not include a legend
+        legend.position="none",
+        #Remove gridlines and color from figure background
+        panel.background=element_blank(),
+        #Make axis lines black
+        axis.line = element_line(colour = "black")))
+```
+  
+  
+#### Number of Prophage by Strain Type
+  
+The clonal complex can also indicate the type of attributes a strain may exhibit. *M. plutonius* can be classified by strain type, which groups the bacteria by either typical or atypical attributes. The strain type of the 6 *M. plutonius* isolates can be found in the column "Type"
+  
+```{r plot_Type}
+
+#Create a plot using the dataframe with isolate information
+#Isolates on x axis
+(plot_type <- df  %>%
+   #summarize average number of prophage by clonal complex
+   reframe(avg=mean(Number_Intact_Prophage),.by=Type)%>%
+   #Strain_Type
+   ggplot(aes(x=Type,
+              #Number of prophage on y axis
+              y=avg,
+              #Colored by the type of strain
+              fill=Type))+
+  #Create columns with the number of prophage
+  geom_col()+
+  #Adjust labels for legibility
+  labs(x="Strain Type",
+       y="Average Number of Potential Prophage")+
+  #Adjust themes for legibility
+  #Increase axis and legend title and text fonts
+  theme(axis.title=element_text(size=20),
+        axis.text=element_text(size=15),
+        #Do not include a legend
+        legend.position="none",
+        #Remove gridlines and color from figure background
+        panel.background=element_blank(),
+        #Make axis lines black
+        axis.line = element_line(colour = "black")))
+```
+  
+### Summarize Data Exploration
+  
+This code chunk will compile the plots created above into one many paneled plot for further examination and comparison
+
+```{r plot_compile}
+#arrange the 4 plots into one plot
+ggarrange(plot_iso,
+          plot_CC,
+          plot_ST,
+          plot_type,
+          #Add alphabet labels to each plot
+          labels="AUTO")
+
+#Save plot as a png
+ggsave("compiled_plots.png",width=15,height=13)
+
+```
+
+  

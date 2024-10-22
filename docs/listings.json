@@ -2,7 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Assignment_4/index.html",
       "/posts/post-with-code/index.html",
+      "/posts/Presentation_1.html",
       "/posts/welcome/index.html"
     ]
   }
