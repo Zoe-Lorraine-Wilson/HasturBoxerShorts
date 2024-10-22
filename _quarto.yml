@@ -4,9 +4,17 @@ project:
 
 website:
   title: "HasturBoxerShorts"
-  navbar:
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "About this blog"
+        href: about.qmd
+    navbar:
+    left: 
+      - text: "Home"
+        href: index.qmd
     right:
-      - about.qmd
       - icon: linkedin
         href: https://www.linkedin.com/in/zoe-l-wilson/
       - icon: github
