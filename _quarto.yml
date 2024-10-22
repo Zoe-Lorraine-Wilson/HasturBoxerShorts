@@ -5,12 +5,14 @@ project:
 website:
   title: "HasturBoxerShorts"
   sidebar:
+    title: "Blog Contents"
+    border: true
     style: "docked"
     search: true
     contents:
       - text: "About this blog"
         href: about.qmd
-    navbar:
+  navbar:
     left: 
       - text: "Home"
         href: index.qmd
